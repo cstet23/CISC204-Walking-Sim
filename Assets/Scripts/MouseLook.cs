@@ -6,8 +6,8 @@ public class MouseLook : MonoBehaviour
 {
     public float sensHor = 9.0f;
     public float sensVert = 9.0f;
-    public float minVert = -45.0f;
-    public float maxVert = 45.0f;
+    public float minVert = -55.0f;
+    public float maxVert = 55.0f;
     private float _rotationX = 0;
     public enum RotationAxes {
         MouseXAndY = 0,
