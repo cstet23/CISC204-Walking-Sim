@@ -7,11 +7,13 @@ using UnityEngine;
 
 public class FPSInput : MonoBehaviour
 {
+    public GameObject jetpackPU;
     private CharacterController _charController;
     private Vector3 playerVelo;
     private bool grounded;
     private bool canJump;
     private bool sprinting = false;
+    public bool jetpack = false;
     public float speed = 6.0f;
     public float grav = -9.8f;
     public float jumpHeight = 1f;
@@ -33,7 +35,7 @@ public class FPSInput : MonoBehaviour
         movement = Vector3.ClampMagnitude(movement, speed);
 
         if (Input.GetButtonDown("Jump") && canJump) {
-            canJump = false;
+            if(!jetpack) canJump = false;
             playerVelo.y = Mathf.Sqrt(jumpHeight * -3.0f * grav);
         }
         playerVelo.y += grav * Time.deltaTime;
